@@ -12,6 +12,7 @@ import os
 import re
 import sys
 import urllib.request
+import urllib.error
 from pathlib import Path
 
 CATALOG = Path(__file__).with_name("payloads.json")
@@ -110,7 +111,17 @@ def refresh(catalog):
     for ident, (repository, pattern) in SOURCES.items():
         release = releases.get(repository)
         if release is None:
-            release = latest_release(repository)
+            try:
+                release = latest_release(repository)
+            except urllib.error.HTTPError as exc:
+                if exc.code != 404:
+                    raise
+                print(
+                    f"WARNING: {ident}: no latest stable release for "
+                    f"{repository} (HTTP 404); keeping previous entry",
+                    file=sys.stderr,
+                )
+                continue
             releases[repository] = release
         matches = [
             asset for asset in release.get("assets", [])
