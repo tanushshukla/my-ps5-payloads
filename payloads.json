@@ -1,0 +1,33 @@
+{
+  "name": "Prospero Manager & Orbit Store",
+  "payloads": [
+    {
+      "id": "prosperomgr",
+      "name": "Prospero Manager",
+      "filename": "ProsperoMgr.elf",
+      "url": "https://github.com/notmaj0r/ProsperoMgr/releases/download/v1.1/ProsperoMgr.elf",
+      "description": "All-in-one web-based PS5 homebrew manager",
+      "version": "v1.1",
+      "last_update": "2026-09-28",
+      "category": "Utilities & Tools",
+      "checksum": "e7a6bb544adb2fb2a61aa9cc83b0ad15f70b32d7511a3de0f1fb88812f11983c",
+      "author": "notmaj0r",
+      "source": "https://github.com/notmaj0r/ProsperoMgr",
+      "details_url": "https://github.com/notmaj0r/ProsperoMgr/blob/main/README.md"
+    },
+    {
+      "id": "orbit-store",
+      "name": "Orbit Store",
+      "filename": "orbit_store.elf",
+      "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v1.3.5/orbit_store.elf",
+      "description": "PS5 game download manager with a browser-based interface",
+      "version": "v1.3.5",
+      "last_update": "2026-10-14",
+      "category": "Utilities & Tools",
+      "checksum": "561a8e8015d9564d44e32b58a84e1294ea7043e96146110801a9f62ad99ac93b",
+      "author": "saawant12",
+      "source": "https://github.com/saawant12/orbit-store-ps5",
+      "details_url": "https://github.com/saawant12/orbit-store-ps5/blob/main/README.md"
+    }
+  ]
+}
