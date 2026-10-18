@@ -254,6 +254,34 @@
       "author": "bsk193",
       "source": "https://github.com/bsk193/ps5-unified-autoloader-x",
       "details_url": "https://github.com/bsk193/ps5-unified-autoloader-x/releases/latest"
+    },
+    {
+      "id": "prospero-menu",
+      "name": "Prospero Menu",
+      "filename": "ProsperoMenu.elf",
+      "url": "https://github.com/StonedModder/Prospero-Menu/releases/download/v1.1.0/ProsperoMenu.elf",
+      "description": "Community-expandable native PS5 overlay menu; L3+R3 in games and ShellUI. Load after kstuff and ShadowMount where used; upstream tested on PS5 firmware 13.60.",
+      "version": "v1.1.0",
+      "last_update": "2026-10-17",
+      "category": "Utilities & Tools",
+      "checksum": "1164262193931eb99cb61cd8e6414db9ff2d2cee93c74f523c5ebafae933c43e",
+      "author": "StonedModder",
+      "source": "https://github.com/StonedModder/Prospero-Menu",
+      "details_url": "https://github.com/StonedModder/Prospero-Menu/releases/tag/v1.1.0"
+    },
+    {
+      "id": "puckbridge-ps5",
+      "name": "Puckbridge PS5 (Ghostcontrol-derived)",
+      "filename": "ghost-control-ps5.elf",
+      "url": "https://github.com/ThisIsAkill/PuckbridgePS5/releases/download/v1.4.0/ghost-control-ps5.elf",
+      "description": "Steam Controller 2026 and Ghostcontrol-derived PS5 virtual-controller support with gyro aiming, flick stick, rumble, remapping, and a local web UI; experimental, tested on firmware 13.60.",
+      "version": "v1.4.0",
+      "last_update": "2026-10-02",
+      "category": "Utilities & Tools",
+      "checksum": "c344b63a20ad5b2406fa46fd2b44dc56a9182e18ee52496f8dc80dbd9bee54a3",
+      "author": "ThisIsAkill",
+      "source": "https://github.com/ThisIsAkill/PuckbridgePS5",
+      "details_url": "https://github.com/ThisIsAkill/PuckbridgePS5/releases/tag/v1.4.0"
     }
   ]
 }
