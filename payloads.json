@@ -226,6 +226,34 @@
       "author": "ZiZc3",
       "source": "https://github.com/ZiZc3/Ruffle-Flash-PS5",
       "details_url": "https://github.com/ZiZc3/Ruffle-Flash-PS5/releases/latest"
+    },
+    {
+      "id": "ps5x360-autolog",
+      "name": "PS5X360 AutoLog (Preview)",
+      "filename": "PS5X360-AutoLog-v1.0.9-preview.elf",
+      "url": "https://github.com/BrinooTk/PS5X360/releases/download/v0.6.0/PS5X360-AutoLog-v1.0.9-preview.elf",
+      "description": "Optional preview logging payload for the separate PS5X360 home-screen Xbox 360 emulator app; experimental and requires companion app. Check firmware compatibility.",
+      "version": "v0.6.0",
+      "last_update": "2026-10-11",
+      "category": "Emulators",
+      "checksum": "5da64c23263e6868696aa0f8b1bfd0eb97581bae73124d08066b507652adfbfb",
+      "author": "BrinooTk",
+      "source": "https://github.com/BrinooTk/PS5X360",
+      "details_url": "https://github.com/BrinooTk/PS5X360/releases/latest"
+    },
+    {
+      "id": "unified-autoloader-x",
+      "name": "PS5 Unified Autoloader X",
+      "filename": "ps5-unified-autoloader-x-v0.1.5.1x-610c375.elf",
+      "url": "https://github.com/bsk193/ps5-unified-autoloader-x/releases/download/v0.1.5.1x-610c375/ps5-unified-autoloader-x-v0.1.5.1x-610c375.elf",
+      "description": "Alternative PS5 payload autoloader for jailbreak startup chains. Intended for use by compatible exploit hosts rather than routine manual launching.",
+      "version": "v0.1.5.1x-610c375",
+      "last_update": "2026-10-02",
+      "category": "System & Jailbreak",
+      "checksum": "944f7e3be41df221a60d0ef86f618336aba3980a2350e9722ad344539b539b3c",
+      "author": "bsk193",
+      "source": "https://github.com/bsk193/ps5-unified-autoloader-x",
+      "details_url": "https://github.com/bsk193/ps5-unified-autoloader-x/releases/latest"
     }
   ]
 }
