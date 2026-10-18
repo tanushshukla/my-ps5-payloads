@@ -37,6 +37,7 @@ SOURCES = {
     "prospero-menu": ("StonedModder/Prospero-Menu", r"ProsperoMenu\.elf"),
     "puckbridge-ps5": ("ThisIsAkill/PuckbridgePS5", r"ghost-control-ps5\.elf"),
 }
+PS_CLOUD_REPOSITORY = "bc160201983/ps5-cloud-save"
 MAX_BINARY_SIZE = 512 * 1024 * 1024
 
 
@@ -140,6 +141,40 @@ def refresh(catalog):
             checksum=checksum,
         )
         print(f"{item['name']}: {version} ({filename})")
+
+    # Include every official PSCloud ELF asset as its own catalog entry.
+    release = releases.get(PS_CLOUD_REPOSITORY) or latest_release(PS_CLOUD_REPOSITORY)
+    for asset in release.get("assets", []):
+        filename = asset.get("name") or ""
+        if not re.fullmatch(r"pscloud-[a-z0-9_-]+\.elf", filename, re.IGNORECASE):
+            continue
+        ident = filename[:-4].lower().replace("_", "-")
+        url = asset.get("browser_download_url", "")
+        prefix = f"https://github.com/{PS_CLOUD_REPOSITORY}/releases/download/"
+        if not url.lower().startswith(prefix.lower()):
+            raise ValueError(f"Unexpected PSCloud URL: {url}")
+        checksum = sha256_for_asset(asset)
+        item = by_id.get(ident)
+        if item is None:
+            role = ident.removeprefix("pscloud-").replace("-", " ").title()
+            item = {
+                "id": ident, "name": f"PSCloud {role}", "filename": filename,
+                "url": url,
+                "description": f"Official PSCloud {role.lower()} ELF; consult upstream documentation for usage.",
+                "version": release["tag_name"],
+                "last_update": (release.get("published_at") or "")[:10],
+                "category": "Utilities & Tools", "checksum": checksum,
+                "author": "bc160201983",
+                "source": f"https://github.com/{PS_CLOUD_REPOSITORY}",
+                "details_url": f"https://github.com/{PS_CLOUD_REPOSITORY}/releases",
+            }
+            catalog["payloads"].append(item)
+            by_id[ident] = item
+        else:
+            item.update(filename=filename, url=url, version=release["tag_name"],
+                        last_update=(release.get("published_at") or "")[:10],
+                        checksum=checksum)
+        print(f"{item['name']}: {release['tag_name']} ({filename})")
 
     filenames = [item["filename"].lower() for item in catalog["payloads"]]
     if len(filenames) != len(set(filenames)):
