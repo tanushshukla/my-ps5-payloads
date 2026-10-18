@@ -10,7 +10,7 @@ Open **Payload Manager → Settings → Manage Sources → Add Source** and past
 https://raw.githubusercontent.com/tanushshukla/my-ps5-payloads/main/payloads.json
 ```
 
-## Included payloads (18 ELF entries)
+## Included payloads (20 ELF entries)
 
 All download links in [payloads.json](payloads.json) point directly to official third-party GitHub releases, with SHA-256 checksums. No ELF binaries are mirrored here.
 
@@ -37,12 +37,14 @@ All download links in [payloads.json](payloads.json) point directly to official 
 - [Ruffle Flash PS5 Helper](https://github.com/ZiZc3/Ruffle-Flash-PS5) — `helper.elf`; companion emulator app required
 - [PS5X360 AutoLog (Preview)](https://github.com/BrinooTk/PS5X360) — `PS5X360-AutoLog-v*.elf`; preview logging helper, not the main Xbox 360 emulator
 - [PS5 Unified Autoloader X](https://github.com/bsk193/ps5-unified-autoloader-x) — versioned `ps5-unified-autoloader-x-v*.elf`; alternative startup-chain tool
+- [Prospero Menu](https://github.com/StonedModder/Prospero-Menu) — `ProsperoMenu.elf`; PS5 ShellUI overlay menu, install after kstuff/ShadowMount (tested on FW 13.60)
+- [Puckbridge PS5](https://github.com/ThisIsAkill/PuckbridgePS5) — `ghost-control-ps5.elf`; Ghostcontrol-derived controller tool with gyro and motion support for Steam Controller (2026), firmware 13.60 tested
 
 **Payload Manager catalog entries are not safety endorsements.** Some ELFs install or support separate home-screen applications, some are experimental, and others are only appropriate as jailbreak bootstrap components. Read upstream instructions and verify console/firmware compatibility.
 
 ## Automatic updates
 
-[GitHub Actions](.github/workflows/update-payloads.yml) checks the latest stable releases for **all 17 upstream projects (18 ELF entries)** every hour (at minute 23 UTC). When a release changes, [update_payloads.py](update_payloads.py) updates `payloads.json`:
+[GitHub Actions](.github/workflows/update-payloads.yml) checks the latest stable releases for **all 19 upstream projects (20 ELF entries)** every hour (at minute 23 UTC). When a release changes, [update_payloads.py](update_payloads.py) updates `payloads.json`:
 
 - release tag/version;
 - ELF download URL and filename;
