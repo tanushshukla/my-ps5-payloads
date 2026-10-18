@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '23 * * * *' # Hourly at :23 UTC; GitHub scheduling can be delayed.
   workflow_dispatch:
+  push:
+    paths:
+      - 'update_payloads.py'
+      - '.github/workflows/update-payloads.yml'
 
 permissions:
   contents: write
