@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Refresh PS5 Payload Manager metadata from official GitHub releases.
+"""Refresh official PS5 ELF release metadata in payloads.json.
 
-Only the configured upstream repositories are trusted; binaries are never
-committed here. A release must expose exactly one ELF matching its expected filename pattern.
+Upstream binaries are never mirrored or committed here.
+Each catalog entry is explicitly tied to one trusted GitHub repository and
+one expected ELF filename pattern; releases without that asset are skipped.
 """
 
 import hashlib
@@ -18,9 +19,21 @@ SOURCES = {
     "prosperomgr": ("notmaj0r/ProsperoMgr", r"ProsperoMgr\.elf"),
     "orbit-store": ("saawant12/orbit-store-ps5", r"orbit_store\.elf"),
     "blackbox": ("D3ATHLY/blackbox", r"blackbox\.elf"),
-    "restore_pm": ("KINGDKAK/RESTORE_PM", r"RESTORE_PM\.elf"),
-    # HyperHEN embeds the release version in the asset filename.
     "hyperhen": ("Michele-M-Media/HYPERHEN", r"HyperHEN[-_]v\d+(?:[._]\d+)+\.elf"),
+    "restore_pm": ("KINGDKAK/RESTORE_PM", r"RESTORE_PM\.elf"),
+    "liveshell": ("ZiZc3/LiveShell", r"liveshell\.elf"),
+    "kura-loader": ("NookieAI/kura", r"kura-loader-ps5\.elf"),
+    "controller-enabler": ("MegaCadeDev/YetAnotherControllerEnabler", r"YetAnotherControllerEnabler\.elf"),
+    "snes9x-ps5": ("MisterTemaki/snes9xPS5", r"Snes9xPS5[-_]v[\da-z._-]+\.elf"),
+    "ps5-lan-transfer": ("Uss15/ps5-lan-transfer", r"ps5-lan-transfer\.elf"),
+    "unified-autoloader": ("itsPLK/ps5-unified-autoloader", r"ps5-unified-autoloader-v[\da-z._-]+\.elf"),
+    "pkg-receiver": ("Loopayeh/pkg-sender", r"pkg-receiver\.elf"),
+    "ps5sx2-installer": ("Swordpdf/PS5SX2", r"PS5SX2Installer\.elf"),
+    "ps5sx2-helper": ("Swordpdf/PS5SX2", r"PS5SXHelper\.elf"),
+    "swanstation-disc-daemon": ("darkxex/SwanStationPS5", r"SwanStationPS5-DiscDaemon\.elf"),
+    "ruffle-flash-helper": ("ZiZc3/Ruffle-Flash-PS5", r"helper\.elf"),
+    "ps5x360-autolog": ("BrinooTk/PS5X360", r"PS5X360-AutoLog-[\da-z._-]+\.elf"),
+    "unified-autoloader-x": ("bsk193/ps5-unified-autoloader-x", r"ps5-unified-autoloader-x-v[\da-z._-]+\.elf"),
 }
 MAX_BINARY_SIZE = 512 * 1024 * 1024
 
@@ -36,7 +49,12 @@ def latest_release(repository):
         headers["Authorization"] = f"Bearer {os.environ['GH_TOKEN']}"
     request = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(request, timeout=30) as response:
-        return json.load(response)
+        release = json.load(response)
+    if release.get("draft") or release.get("prerelease"):
+        raise ValueError(f"Nonstable release returned for {repository}")
+    if not release.get("tag_name"):
+        raise ValueError(f"Missing release tag for {repository}")
+    return release
 
 
 def sha256_for_asset(asset):
@@ -44,55 +62,73 @@ def sha256_for_asset(asset):
     if re.fullmatch(r"sha256:[0-9a-fA-F]{64}", digest):
         return digest.split(":", 1)[1].lower()
 
-    # Older GitHub release assets may have no digest. Compute it rather than
-    # publishing an unverified checksum. Streaming avoids buffering the ELF.
+    # GitHub sometimes omits asset digests; stream the binary to hash it.
     url = asset["browser_download_url"]
-    request = urllib.request.Request(url, headers={"User-Agent": "my-ps5-payloads-updater"})
+    request = urllib.request.Request(
+        url, headers={"User-Agent": "my-ps5-payloads-updater"}
+    )
     hasher = hashlib.sha256()
     count = 0
     with urllib.request.urlopen(request, timeout=90) as response:
         while chunk := response.read(1024 * 1024):
             count += len(chunk)
             if count > MAX_BINARY_SIZE:
-                raise ValueError(f"Release asset exceeds {MAX_BINARY_SIZE} bytes: {url}")
+                raise ValueError(f"Asset exceeds 512 MB limit: {url}")
             hasher.update(chunk)
     if not count:
         raise ValueError(f"Empty ELF download: {url}")
     return hasher.hexdigest()
 
 
-def refresh(catalog):
-    payloads = catalog["payloads"]
-    by_id = {item["id"]: item for item in payloads}
-    if len(by_id) != len(payloads):
-        raise ValueError("Duplicate payload ids in catalog")
+def version_from_asset(ident, asset_name, tag):
+    if ident == "hyperhen":
+        match = re.fullmatch(
+            r"HyperHEN[-_]v(\d+(?:[._]\d+)+)\.elf", asset_name, re.IGNORECASE
+        )
+        return "v" + match.group(1).replace("_", ".")
+    return tag
 
-    for ident, (repo, elf_pattern) in SOURCES.items():
-        if ident not in by_id:
-            raise ValueError(f"Missing expected payload entry: {ident}")
-        release = latest_release(repo)
-        if release.get("draft") or release.get("prerelease"):
-            raise ValueError(f"Unexpected draft/prerelease returned by GitHub for {repo}")
-        tag = release.get("tag_name")
-        if not isinstance(tag, str) or not tag:
-            raise ValueError(f"Release tag missing for {repo}")
-        assets = [
-            a for a in release.get("assets", [])
-            if re.fullmatch(elf_pattern, a.get("name", ""), re.IGNORECASE)
+
+def refresh(catalog):
+    by_id = {}
+    for item in catalog["payloads"]:
+        ident = item["id"]
+        if ident in by_id:
+            raise ValueError(f"Duplicate payload id: {ident}")
+        by_id[ident] = item
+
+    if set(SOURCES) - set(by_id):
+        raise ValueError(f"Missing manifest entries: {sorted(set(SOURCES) - set(by_id))}")
+
+    # PS5SX2 supplies two distinct payloads from the same release.
+    # Cache API results per upstream repository to reduce GitHub rate usage.
+    releases = {}
+    for ident, (repository, pattern) in SOURCES.items():
+        release = releases.get(repository)
+        if release is None:
+            release = latest_release(repository)
+            releases[repository] = release
+        matches = [
+            asset for asset in release.get("assets", [])
+            if re.fullmatch(pattern, asset.get("name") or "", re.IGNORECASE)
         ]
-        if len(assets) != 1:
-            raise ValueError(f"Expected exactly one ELF matching {elf_pattern} in {repo} release {tag}")
-        asset = assets[0]
+        if len(matches) != 1:
+            # A new upstream release may temporarily omit a companion helper.
+            # Preserve its previous working link without blocking all updates.
+            print(
+                f"WARNING: {ident}: found {len(matches)} matching ELF assets "
+                f"in {repository} release {release['tag_name']}; keeping previous entry",
+                file=sys.stderr,
+            )
+            continue
+        asset = matches[0]
         url = asset.get("browser_download_url", "")
-        if not url.startswith(f"https://github.com/{repo}/releases/download/"):
-            raise ValueError(f"Unexpected download URL for {repo}: {url}")
-        checksum = sha256_for_asset(asset)
+        expected_prefix = f"https://github.com/{repository}/releases/download/"
+        if not url.lower().startswith(expected_prefix.lower()):
+            raise ValueError(f"Unexpected download URL for {ident}: {url}")
         filename = asset["name"]
-        version = tag
-        if ident == "hyperhen":
-            # HYPERHEN_V0_9_2 -> v0.9.2; compare versions cleanly in Payload Manager.
-            match = re.fullmatch(r"HyperHEN[-_]v(\d+(?:[._]\d+)+)\.elf", filename, re.IGNORECASE)
-            version = "v" + match.group(1).replace("_", ".")
+        checksum = sha256_for_asset(asset)
+        version = version_from_asset(ident, filename, release["tag_name"])
         item = by_id[ident]
         item.update(
             filename=filename,
@@ -102,6 +138,10 @@ def refresh(catalog):
             checksum=checksum,
         )
         print(f"{item['name']}: {version} ({filename})")
+
+    filenames = [item["filename"].lower() for item in catalog["payloads"]]
+    if len(filenames) != len(set(filenames)):
+        raise ValueError("Filename collision across payloads; refusing to publish")
     return catalog
 
 
