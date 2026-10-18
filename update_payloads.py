@@ -34,6 +34,8 @@ SOURCES = {
     "ruffle-flash-helper": ("ZiZc3/Ruffle-Flash-PS5", r"helper\.elf"),
     "ps5x360-autolog": ("BrinooTk/PS5X360", r"PS5X360-AutoLog-[\da-z._-]+\.elf"),
     "unified-autoloader-x": ("bsk193/ps5-unified-autoloader-x", r"ps5-unified-autoloader-x-v[\da-z._-]+\.elf"),
+    "prospero-menu": ("StonedModder/Prospero-Menu", r"ProsperoMenu\.elf"),
+    "puckbridge-ps5": ("ThisIsAkill/PuckbridgePS5", r"ghost-control-ps5\.elf"),
 }
 MAX_BINARY_SIZE = 512 * 1024 * 1024
 
