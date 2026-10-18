@@ -1,5 +1,5 @@
 {
-  "name": "Prospero Manager, Orbit Store & BlackBox",
+  "name": "Prospero Manager, Orbit Store, BlackBox & HyperHEN",
   "payloads": [
     {
       "id": "prosperomgr",
@@ -43,6 +43,21 @@
       "source": "https://github.com/D3ATHLY/blackbox",
       "details_url": "https://github.com/D3ATHLY/blackbox/releases/latest",
       "release_notes": "Developer warning: Do not launch blackbox.elf using Payload Manager. Install PPSA01453.ffpkg with ShadowMount; the ELF is bundled inside the FFPKG."
+    },
+    {
+      "id": "hyperhen",
+      "name": "HyperHEN",
+      "filename": "HyperHEN-v0.9.2.elf",
+      "url": "https://github.com/Michele-M-Media/HYPERHEN/releases/download/HYPERHEN_V0_9_2/HyperHEN-v0.9.2.elf",
+      "description": "All-in-one PS5 HEN, HyperCore and Toolbox. Requires a jailbroken PS5 and external elfldr; check exact firmware support before launching.",
+      "version": "v0.9.2",
+      "last_update": "2026-10-14",
+      "category": "System & Jailbreak",
+      "checksum": "c35b8f6dbe4355be7e55891e6b326d82f3d6aae8483f6cf0e27d372b0aea97ae",
+      "author": "Michele-M-Media",
+      "source": "https://github.com/Michele-M-Media/HYPERHEN",
+      "details_url": "https://github.com/Michele-M-Media/HYPERHEN/releases/tag/HYPERHEN_V0_9_2",
+      "release_notes": "Requires a jailbroken PS5 with an external elfldr on TCP 9021. Firmware support uses exact profiles; some profiles have not been hardware-validated. Read the upstream release notes before launching."
     }
   ]
 }
