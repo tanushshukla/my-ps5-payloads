@@ -1,5 +1,5 @@
 {
-  "name": "Prospero Manager, Orbit Store, BlackBox & HyperHEN",
+  "name": "Prospero Manager, Orbit Store, BlackBox, HyperHEN & RESTORE_PM",
   "payloads": [
     {
       "id": "prosperomgr",
@@ -58,6 +58,20 @@
       "source": "https://github.com/Michele-M-Media/HYPERHEN",
       "details_url": "https://github.com/Michele-M-Media/HYPERHEN/releases/tag/HYPERHEN_V0_9_2",
       "release_notes": "Requires a jailbroken PS5 with an external elfldr on TCP 9021. Firmware support uses exact profiles; some profiles have not been hardware-validated. Read the upstream release notes before launching."
+    },
+    {
+      "id": "restore_pm",
+      "name": "RESTORE_PM",
+      "filename": "RESTORE_PM.elf",
+      "url": "https://github.com/KINGDKAK/RESTORE_PM/releases/download/v1.0/RESTORE_PM.elf",
+      "description": "Restore the Payload Manager home screen icon on a jailbroken PS5 when it is missing or will not open. Does not remove other apps.",
+      "version": "v1.0",
+      "last_update": "2026-08-06",
+      "category": "Utilities & Tools",
+      "checksum": "ecdcbccdf1b4595e4e1b750aa9a3a7f4c7f9682ab5258776494928399bc24d64",
+      "author": "KINGDKAK",
+      "source": "https://github.com/KINGDKAK/RESTORE_PM",
+      "details_url": "https://github.com/KINGDKAK/RESTORE_PM/blob/main/README.md"
     }
   ]
 }
