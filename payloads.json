@@ -282,6 +282,20 @@
       "author": "ThisIsAkill",
       "source": "https://github.com/ThisIsAkill/PuckbridgePS5",
       "details_url": "https://github.com/ThisIsAkill/PuckbridgePS5/releases/tag/v1.4.0"
+    },
+    {
+      "id": "pscloud-dashboard",
+      "name": "PSCloud Dashboard",
+      "filename": "pscloud-dashboard.elf",
+      "url": "https://github.com/bc160201983/ps5-cloud-save/releases/download/v0.34.28/pscloud-dashboard.elf",
+      "description": "Official PSCloud dashboard ELF; consult upstream documentation for usage.",
+      "version": "v0.34.28",
+      "last_update": "2026-10-15",
+      "category": "Utilities & Tools",
+      "checksum": "4298b70ed5262bc2acdf03a88e835ea01f0c7e081fbde2a0566841f4508dd271",
+      "author": "bc160201983",
+      "source": "https://github.com/bc160201983/ps5-cloud-save",
+      "details_url": "https://github.com/bc160201983/ps5-cloud-save/releases"
     }
   ]
 }
