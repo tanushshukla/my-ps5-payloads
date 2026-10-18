@@ -36,6 +36,7 @@ SOURCES = {
     "unified-autoloader-x": ("bsk193/ps5-unified-autoloader-x", r"ps5-unified-autoloader-x-v[\da-z._-]+\.elf"),
     "prospero-menu": ("StonedModder/Prospero-Menu", r"ProsperoMenu\.elf"),
     "puckbridge-ps5": ("ThisIsAkill/PuckbridgePS5", r"ghost-control-ps5\.elf"),
+    "romm-sync": ("s0liton/RommPS", r"romm-sync\.elf"),
 }
 PS_CLOUD_REPOSITORY = "bc160201983/ps5-cloud-save"
 MAX_BINARY_SIZE = 512 * 1024 * 1024
