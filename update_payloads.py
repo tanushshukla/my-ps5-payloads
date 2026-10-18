@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Refresh PS5 Payload Manager metadata from official GitHub releases.
 
-Only the two configured upstream repositories are trusted; binaries are never
+Only the configured upstream repositories are trusted; binaries are never
 committed here. A release must expose the exact expected ELF asset.
 """
 
@@ -17,6 +17,7 @@ CATALOG = Path(__file__).with_name("payloads.json")
 SOURCES = {
     "prosperomgr": ("notmaj0r/ProsperoMgr", "ProsperoMgr.elf"),
     "orbit-store": ("saawant12/orbit-store-ps5", "orbit_store.elf"),
+    "blackbox": ("D3ATHLY/blackbox", "blackbox.elf"),
 }
 MAX_BINARY_SIZE = 512 * 1024 * 1024
 
