@@ -296,6 +296,20 @@
       "author": "bc160201983",
       "source": "https://github.com/bc160201983/ps5-cloud-save",
       "details_url": "https://github.com/bc160201983/ps5-cloud-save/releases"
+    },
+    {
+      "id": "romm-sync",
+      "name": "RommPS RomM Sync",
+      "filename": "romm-sync.elf",
+      "url": "https://github.com/s0liton/RommPS/releases/download/v1.2.1/romm-sync.elf",
+      "description": "Official PS5 background RomM library download and bidirectional emulator save/savestate syncing payload. Requires jailbroken PS5 with etaHEN or onionHEN/kstuff and a RomM 5.2.0+ server; configure via web UI on port 8780. Back up saves before initial sync. PS5 ELF only, not the PS4 build.",
+      "version": "v1.2.1",
+      "last_update": "2026-10-15",
+      "category": "Network",
+      "checksum": "8d7e44c512b311f4bbb522f6761a6319533bcd9d988a72bd313197d8161dd696",
+      "author": "s0liton",
+      "source": "https://github.com/s0liton/RommPS",
+      "details_url": "https://github.com/s0liton/RommPS/releases/tag/v1.2.1"
     }
   ]
 }
