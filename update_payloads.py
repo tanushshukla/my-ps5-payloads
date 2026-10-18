@@ -2,7 +2,7 @@
 """Refresh PS5 Payload Manager metadata from official GitHub releases.
 
 Only the configured upstream repositories are trusted; binaries are never
-committed here. A release must expose the exact expected ELF asset.
+committed here. A release must expose exactly one ELF matching its expected filename pattern.
 """
 
 import hashlib
@@ -15,9 +15,11 @@ from pathlib import Path
 
 CATALOG = Path(__file__).with_name("payloads.json")
 SOURCES = {
-    "prosperomgr": ("notmaj0r/ProsperoMgr", "ProsperoMgr.elf"),
-    "orbit-store": ("saawant12/orbit-store-ps5", "orbit_store.elf"),
-    "blackbox": ("D3ATHLY/blackbox", "blackbox.elf"),
+    "prosperomgr": ("notmaj0r/ProsperoMgr", r"ProsperoMgr\.elf"),
+    "orbit-store": ("saawant12/orbit-store-ps5", r"orbit_store\.elf"),
+    "blackbox": ("D3ATHLY/blackbox", r"blackbox\.elf"),
+    # HyperHEN embeds the release version in the asset filename.
+    "hyperhen": ("Michele-M-Media/HYPERHEN", r"HyperHEN[-_]v\d+(?:[._]\d+)+\.elf"),
 }
 MAX_BINARY_SIZE = 512 * 1024 * 1024
 
@@ -64,7 +66,7 @@ def refresh(catalog):
     if len(by_id) != len(payloads):
         raise ValueError("Duplicate payload ids in catalog")
 
-    for ident, (repo, expected_elf) in SOURCES.items():
+    for ident, (repo, elf_pattern) in SOURCES.items():
         if ident not in by_id:
             raise ValueError(f"Missing expected payload entry: {ident}")
         release = latest_release(repo)
@@ -73,23 +75,32 @@ def refresh(catalog):
         tag = release.get("tag_name")
         if not isinstance(tag, str) or not tag:
             raise ValueError(f"Release tag missing for {repo}")
-        assets = [a for a in release.get("assets", []) if a.get("name") == expected_elf]
+        assets = [
+            a for a in release.get("assets", [])
+            if re.fullmatch(elf_pattern, a.get("name", ""), re.IGNORECASE)
+        ]
         if len(assets) != 1:
-            raise ValueError(f"Expected exactly one {expected_elf} in {repo} release {tag}")
+            raise ValueError(f"Expected exactly one ELF matching {elf_pattern} in {repo} release {tag}")
         asset = assets[0]
         url = asset.get("browser_download_url", "")
         if not url.startswith(f"https://github.com/{repo}/releases/download/"):
             raise ValueError(f"Unexpected download URL for {repo}: {url}")
         checksum = sha256_for_asset(asset)
+        filename = asset["name"]
+        version = tag
+        if ident == "hyperhen":
+            # HYPERHEN_V0_9_2 -> v0.9.2; compare versions cleanly in Payload Manager.
+            match = re.fullmatch(r"HyperHEN[-_]v(\d+(?:[._]\d+)+)\.elf", filename, re.IGNORECASE)
+            version = "v" + match.group(1).replace("_", ".")
         item = by_id[ident]
         item.update(
-            filename=expected_elf,
+            filename=filename,
             url=url,
-            version=tag,
+            version=version,
             last_update=(release.get("published_at") or "")[:10],
             checksum=checksum,
         )
-        print(f"{item['name']}: {tag} ({expected_elf})")
+        print(f"{item['name']}: {version} ({filename})")
     return catalog
 
 
