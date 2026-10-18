@@ -14,12 +14,13 @@ https://raw.githubusercontent.com/tanushshukla/my-ps5-payloads/main/payloads.jso
 
 - **Prospero Manager:** [notmaj0r/ProsperoMgr](https://github.com/notmaj0r/ProsperoMgr) — `ProsperoMgr.elf`
 - **Orbit Store (browser ELF):** [saawant12/orbit-store-ps5](https://github.com/saawant12/orbit-store-ps5) — `orbit_store.elf`
+- **BlackBox:** [D3ATHLY/blackbox](https://github.com/D3ATHLY/blackbox) — `blackbox.elf` (listed for reference; **upstream warns not to run the ELF in Payload Manager**. Install `PPSA01453.ffpkg` with ShadowMount instead.)
 
 The manifest contains download links to the developers' official GitHub Release assets. No ELF binaries are mirrored by this repository.
 
 ## Automatic updates
 
-[GitHub Actions](.github/workflows/update-payloads.yml) checks both projects' **latest stable releases** every hour (at minute 23 UTC). When a release changes, [update_payloads.py](update_payloads.py) updates `payloads.json`:
+[GitHub Actions](.github/workflows/update-payloads.yml) checks all three projects' **latest stable releases** every hour (at minute 23 UTC). When a release changes, [update_payloads.py](update_payloads.py) updates `payloads.json`:
 
 - release tag/version;
 - ELF download URL and filename;
