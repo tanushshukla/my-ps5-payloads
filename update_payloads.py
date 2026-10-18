@@ -18,6 +18,7 @@ SOURCES = {
     "prosperomgr": ("notmaj0r/ProsperoMgr", r"ProsperoMgr\.elf"),
     "orbit-store": ("saawant12/orbit-store-ps5", r"orbit_store\.elf"),
     "blackbox": ("D3ATHLY/blackbox", r"blackbox\.elf"),
+    "restore_pm": ("KINGDKAK/RESTORE_PM", r"RESTORE_PM\.elf"),
     # HyperHEN embeds the release version in the asset filename.
     "hyperhen": ("Michele-M-Media/HYPERHEN", r"HyperHEN[-_]v\d+(?:[._]\d+)+\.elf"),
 }
