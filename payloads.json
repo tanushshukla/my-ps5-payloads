@@ -324,6 +324,20 @@
       "author": "soniciso1",
       "source": "https://github.com/soniciso1/ps5-linux-loader",
       "details_url": "https://github.com/soniciso1/ps5-linux-loader/releases/tag/v13.60"
+    },
+    {
+      "id": "ps5-nzb-downloader",
+      "name": "PS5 NZB Downloader",
+      "filename": "ps5_nzb_downloader_v0.2.2.elf",
+      "url": "https://github.com/lchmagKekse/PS5-NZB-Downloader/releases/download/0.2.2/ps5_nzb_downloader_v0.2.2.elf",
+      "description": "Experimental PS5 Usenet/NZB downloader with local web UI on port 4202, queue, PAR2 repair, and archive extraction. Requires jailbroken PS5 and a Usenet provider. Upstream labels releases prerelease; use at your own risk and only download content you are authorized to access.",
+      "version": "0.2.2",
+      "last_update": "2026-08-16",
+      "category": "Network",
+      "checksum": "28764459ff601a8eaabda329db71be889c8e7940cda4be04b6a8b4686fb71eda",
+      "author": "lchmagKekse",
+      "source": "https://github.com/lchmagKekse/PS5-NZB-Downloader",
+      "details_url": "https://github.com/lchmagKekse/PS5-NZB-Downloader/releases/tag/0.2.2"
     }
   ]
 }
