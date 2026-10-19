@@ -10,7 +10,7 @@ Open **Payload Manager → Settings → Manage Sources → Add Source** and past
 https://raw.githubusercontent.com/tanushshukla/my-ps5-payloads/main/payloads.json
 ```
 
-## Included payloads (23 ELF entries)
+## Included payloads (24 ELF entries)
 
 All download links in [payloads.json](payloads.json) point directly to official third-party GitHub releases, with SHA-256 checksums. No ELF binaries are mirrored here.
 
@@ -42,6 +42,7 @@ All download links in [payloads.json](payloads.json) point directly to official 
 - [RommPS](https://github.com/s0liton/RommPS) — `romm-sync.elf`; PS5 background RomM server game/save syncing payload (requires compatible HEN and RomM server)
 - [PSCloud](https://github.com/bc160201983/ps5-cloud-save) — `pscloud-dashboard.elf`; cloud-save dashboard companion ELF
 - [PS5 Linux Loader](https://github.com/soniciso1/ps5-linux-loader) — `ps5-linux-loader.elf`; Linux boot loader for supported PS5 firmware, with **experimental** 13.60/PS5 Pro support. Requires Linux media and upstream setup instructions. Kernel packages from [ps5-linux-patches](https://github.com/ps5-linux/ps5-linux-patches) are not ELF payloads and are not included.
+- [PS5 NZB Downloader](https://github.com/lchmagKekse/PS5-NZB-Downloader) — `ps5_nzb_downloader_v*.elf`; experimental prerelease NZB/Usenet downloader with web UI on port 4202; requires a Usenet provider and jailbroken PS5. Only download content you are authorized to access.
 
 **Payload Manager catalog entries are not safety endorsements.** Some ELFs install or support separate home-screen applications, some are experimental, and others are only appropriate as jailbreak bootstrap components. Read upstream instructions and verify console/firmware compatibility.
 
