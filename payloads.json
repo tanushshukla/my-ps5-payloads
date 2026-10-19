@@ -310,6 +310,20 @@
       "author": "s0liton",
       "source": "https://github.com/s0liton/RommPS",
       "details_url": "https://github.com/s0liton/RommPS/releases/tag/v1.2.1"
+    },
+    {
+      "id": "ps5-linux-loader",
+      "name": "PS5 Linux Loader",
+      "filename": "ps5-linux-loader.elf",
+      "url": "https://github.com/soniciso1/ps5-linux-loader/releases/download/v13.60/ps5-linux-loader.elf",
+      "description": "PS5 Linux boot loader. Requires supported firmware and Linux installation/media; follow upstream hardware and rest-mode setup instructions. Supports listed 3.00–7.61 firmware profiles and experimental 13.60 on PS5 Phat, Slim and Pro. 13.60 stability is not guaranteed; do not update console firmware solely for this payload.",
+      "version": "v13.60",
+      "last_update": "2026-10-19",
+      "category": "System & Jailbreak",
+      "checksum": "32041e7c54db8f1a86a0db0b8fb2a755d8f0209482e29ee903afd059d71b0989",
+      "author": "soniciso1",
+      "source": "https://github.com/soniciso1/ps5-linux-loader",
+      "details_url": "https://github.com/soniciso1/ps5-linux-loader/releases/tag/v13.60"
     }
   ]
 }
