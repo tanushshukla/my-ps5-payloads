@@ -39,13 +39,17 @@ SOURCES = {
     "puckbridge-ps5": ("ThisIsAkill/PuckbridgePS5", r"ghost-control-ps5\.elf"),
     "romm-sync": ("s0liton/RommPS", r"romm-sync\.elf"),
     "ps5-linux-loader": ("soniciso1/ps5-linux-loader", r"ps5-linux-loader\.elf"),
+    "ps5-nzb-downloader": ("lchmagKekse/PS5-NZB-Downloader", r"ps5_nzb_downloader_v[\da-z._-]+\.elf"),
 }
 PS_CLOUD_REPOSITORY = "bc160201983/ps5-cloud-save"
+PRERELEASE_SOURCES = {"ps5-nzb-downloader"}
 MAX_BINARY_SIZE = 512 * 1024 * 1024
 
 
-def latest_release(repository):
-    url = f"https://api.github.com/repos/{repository}/releases/latest"
+def latest_release(repository, allow_prerelease=False):
+    url = (f"https://api.github.com/repos/{repository}/releases?per_page=20"
+           if allow_prerelease else
+           f"https://api.github.com/repos/{repository}/releases/latest")
     headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": "my-ps5-payloads-updater",
@@ -56,7 +60,11 @@ def latest_release(repository):
     request = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(request, timeout=30) as response:
         release = json.load(response)
-    if release.get("draft") or release.get("prerelease"):
+    if allow_prerelease:
+        release = next((item for item in release if not item.get("draft")), None)
+        if release is None:
+            raise ValueError(f"No published releases for {repository}")
+    elif release.get("draft") or release.get("prerelease"):
         raise ValueError(f"Nonstable release returned for {repository}")
     if not release.get("tag_name"):
         raise ValueError(f"Missing release tag for {repository}")
@@ -113,7 +121,7 @@ def refresh(catalog):
         release = releases.get(repository)
         if release is None:
             try:
-                release = latest_release(repository)
+                release = latest_release(repository, allow_prerelease=ident in PRERELEASE_SOURCES)
             except urllib.error.HTTPError as exc:
                 if exc.code != 404:
                     raise
