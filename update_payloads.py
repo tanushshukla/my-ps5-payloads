@@ -38,6 +38,7 @@ SOURCES = {
     "prospero-menu": ("StonedModder/Prospero-Menu", r"ProsperoMenu\.elf"),
     "puckbridge-ps5": ("ThisIsAkill/PuckbridgePS5", r"ghost-control-ps5\.elf"),
     "romm-sync": ("s0liton/RommPS", r"romm-sync\.elf"),
+    "ps5-linux-loader": ("soniciso1/ps5-linux-loader", r"ps5-linux-loader\.elf"),
 }
 PS_CLOUD_REPOSITORY = "bc160201983/ps5-cloud-save"
 MAX_BINARY_SIZE = 512 * 1024 * 1024
