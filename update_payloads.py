@@ -41,6 +41,7 @@ SOURCES = {
     "ps5-linux-loader": ("soniciso1/ps5-linux-loader", r"ps5-linux-loader\.elf"),
     "ps5-nzb-downloader": ("lchmagKekse/PS5-NZB-Downloader", r"ps5_nzb_downloader_v[\da-z._-]+\.elf"),
     "ps4mount": ("gasb07/ps4mount", r"ps4mount\.elf"),
+    "ezremote-server": ("cy33hc/ps5-ezremote-server", r"ezremote-server\.elf"),
 }
 PS_CLOUD_REPOSITORY = "bc160201983/ps5-cloud-save"
 PRERELEASE_SOURCES = {"ps5-nzb-downloader"}
