@@ -146,13 +146,13 @@
     {
       "id": "unified-autoloader",
       "name": "PS5 Unified Autoloader",
-      "filename": "ps5-unified-autoloader-v0.1.5-915a65e.elf",
-      "url": "https://github.com/itsPLK/ps5-unified-autoloader/releases/download/v0.1.5-915a65e/ps5-unified-autoloader-v0.1.5-915a65e.elf",
+      "filename": "ps5-unified-autoloader-v0.1.6-e7093cd.elf",
+      "url": "https://github.com/itsPLK/ps5-unified-autoloader/releases/download/v0.1.6-e7093cd/ps5-unified-autoloader-v0.1.6-e7093cd.elf",
       "description": "Automates launch of configured payloads during jailbreak chains; intended for startup-chain integration, not routine manual launch.",
-      "version": "v0.1.5-915a65e",
-      "last_update": "2026-09-29",
+      "version": "v0.1.6-e7093cd",
+      "last_update": "2026-10-20",
       "category": "System & Jailbreak",
-      "checksum": "c8e36ea06cfd37c5fad356ff9fcd09d3e62065d88170b5119ce8f1eeb3efacac",
+      "checksum": "edc4f805404f80497026ba2d74f675ee7043b1ef7f4ed92b82c1ef200aac123d",
       "author": "itsPLK",
       "source": "https://github.com/itsPLK/ps5-unified-autoloader",
       "details_url": "https://github.com/itsPLK/ps5-unified-autoloader/releases/latest"
