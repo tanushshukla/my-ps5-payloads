@@ -366,6 +366,20 @@
       "author": "cy33hc",
       "source": "https://github.com/cy33hc/ps5-ezremote-server",
       "details_url": "https://github.com/cy33hc/ps5-ezremote-server/releases/tag/1.11"
+    },
+    {
+      "id": "recompstore-installer",
+      "name": "RecompStore Installer",
+      "filename": "RecompStore-Installer.elf",
+      "url": "https://github.com/elripalda/RecompStore/releases/download/v2.5.1/RecompStore-Installer.elf",
+      "description": "Official Recomp Store installer ELF for jailbroken PS5. Downloads, checksum-verifies and installs the separate Recomp Store home-screen app from its official release. Requires kstuff, an ELF loader (typically port 9021), and ShadowMountPlus 1.7 Beta 5 or newer for home-screen integration. Use games and disc images you are legally entitled to access.",
+      "version": "v2.5.1",
+      "last_update": "2026-10-21",
+      "category": "Utilities & Tools",
+      "checksum": "f5a224ec77e56194e6db141bd077a029dfced975c3645f1afe34e4994419309b",
+      "author": "elripalda",
+      "source": "https://github.com/elripalda/RecompStore",
+      "details_url": "https://github.com/elripalda/RecompStore/releases/tag/v2.5.1"
     }
   ]
 }
