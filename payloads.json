@@ -380,6 +380,20 @@
       "author": "elripalda",
       "source": "https://github.com/elripalda/RecompStore",
       "details_url": "https://github.com/elripalda/RecompStore/releases/tag/v2.5.1"
+    },
+    {
+      "id": "ps5-game-updater",
+      "name": "PS5 Game Updater",
+      "filename": "game-updater.elf",
+      "url": "https://theghostonline.dev/theghostonline/PS5-Game-Updater/releases/download/v1.0.2/game-updater.elf",
+      "description": "Experimental PS5 game-update engine for jailbroken consoles; finds official updates, downloads and installs them, and may apply community backport shims for higher-firmware updates. Serves web UI on port 7920; native companion app is a separate ZIP. Requires Payload Manager for native app integration. SHA-256 is calculated from a user-supplied ELF, not independently verified against the publisher. Use at your own risk.",
+      "version": "v1.0.2",
+      "last_update": "2026-10-24",
+      "category": "Utilities & Tools",
+      "checksum": "80128166318d13717962709e6186eadb7ebc9cccf24a61bdb51f1f42531c60c8",
+      "author": "theghostonline",
+      "source": "https://theghostonline.dev/theghostonline/PS5-Game-Updater",
+      "details_url": "https://theghostonline.dev/theghostonline/PS5-Game-Updater/releases/tag/v1.0.2"
     }
   ]
 }
