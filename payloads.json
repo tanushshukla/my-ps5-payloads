@@ -118,13 +118,13 @@
     {
       "id": "snes9x-ps5",
       "name": "Snes9x PS5 (Installer + Helper)",
-      "filename": "Snes9xPS5-v2.9.elf",
-      "url": "https://github.com/MisterTemaki/snes9xPS5/releases/download/v2.9/Snes9xPS5-v2.9.elf",
+      "filename": "Snes9xPS5-v2.10.elf",
+      "url": "https://github.com/MisterTemaki/snes9xPS5/releases/download/v2.10/Snes9xPS5-v2.10.elf",
       "description": "Installs and supports a separate Snes9x PS5 home-screen emulator app; this ELF is not the standalone emulator.",
-      "version": "v2.9",
-      "last_update": "2026-10-23",
+      "version": "v2.10",
+      "last_update": "2026-10-30",
       "category": "Emulators",
-      "checksum": "14d5147546ec26d54973fbad975d380539832834d8940e3806f902e2183b2779",
+      "checksum": "0c93ea13f1469bed9d7588593fa8cf9d2ea4e74c4a32a446f13a168e1b3e17bb",
       "author": "MisterTemaki",
       "source": "https://github.com/MisterTemaki/snes9xPS5",
       "details_url": "https://github.com/MisterTemaki/snes9xPS5/releases/latest"
