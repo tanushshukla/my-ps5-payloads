@@ -43,6 +43,7 @@ SOURCES = {
     "ps4mount": ("gasb07/ps4mount", r"ps4mount\.elf"),
     "ezremote-server": ("cy33hc/ps5-ezremote-server", r"ezremote-server\.elf"),
     "recompstore-installer": ("elripalda/RecompStore", r"RecompStore-Installer\.elf"),
+    "ps5-smbd": ("Marice/ps5-smbd", r"ps5-smbd\.elf"),
 }
 PS_CLOUD_REPOSITORY = "bc160201983/ps5-cloud-save"
 PRERELEASE_SOURCES = {"ps5-nzb-downloader"}
