@@ -44,4 +44,20 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add payloads.json
           git commit -m 'chore: refresh PS5 payload release catalog'
-          git push
+          # The default branch may advance while the updater runs. Rebase and
+          # retry instead of force-pushing or dropping another writer's changes.
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if ! git rebase origin/main; then
+              git rebase --abort || true
+              echo 'Catalog changed concurrently and could not be rebased safely.' >&2
+              exit 1
+            fi
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push race on attempt $attempt; retrying..." >&2
+            sleep 2
+          done
+          echo 'Could not push after 5 attempts.' >&2
+          exit 1
