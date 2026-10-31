@@ -394,6 +394,20 @@
       "author": "theghostonline",
       "source": "https://theghostonline.dev/theghostonline/PS5-Game-Updater",
       "details_url": "https://theghostonline.dev/theghostonline/PS5-Game-Updater/releases/tag/v1.0.2"
+    },
+    {
+      "id": "ps5-smbd",
+      "name": "ps5-smbd",
+      "filename": "ps5-smbd.elf",
+      "url": "https://github.com/Marice/ps5-smbd/releases/download/v0.2.0/ps5-smbd.elf",
+      "description": "SMB2/3 file-sharing server for jailbroken PS5 exposing /data and /mnt (including mounted drives) as read/write Windows shares. SECURITY WARNING: Uses documented fixed credentials ps5/ps5; anyone on your network who knows them can modify or delete PS5 files, saves and other sensitive data. Run only on a trusted isolated LAN; do not expose SMB port 445 to the internet.",
+      "version": "v0.2.0",
+      "last_update": "2026-10-30",
+      "category": "Network",
+      "checksum": "a6c252ee1c59dd120950f1785e23efbbc31b76428d30731be529b69195f27acd",
+      "author": "Marice",
+      "source": "https://github.com/Marice/ps5-smbd",
+      "details_url": "https://github.com/Marice/ps5-smbd/releases/tag/v0.2.0"
     }
   ]
 }
