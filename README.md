@@ -10,7 +10,7 @@ Open **Payload Manager → Settings → Manage Sources → Add Source** and past
 https://raw.githubusercontent.com/tanushshukla/my-ps5-payloads/main/payloads.json
 ```
 
-## Included payloads (28 ELF entries)
+## Included payloads (29 ELF entries)
 
 All download links in [payloads.json](payloads.json) point directly to official third-party GitHub releases, with SHA-256 checksums. No ELF binaries are mirrored here.
 
@@ -47,6 +47,7 @@ All download links in [payloads.json](payloads.json) point directly to official 
 - [ezRemote Server](https://github.com/cy33hc/ps5-ezremote-server) — `ezremote-server.elf`; PS5 background payload for the separate [ezRemote Client](https://github.com/cy33hc/ps5-ezremote-client) homebrew app, enabling remote package installations. ezRemote Client can auto-start the server; avoid launching duplicate instances.
 - [RecompStore](https://github.com/elripalda/RecompStore) — `RecompStore-Installer.elf`; installs the separate PS5 Recomp Store home-screen app from the official signed/checksummed release. Requires kstuff, an ELF loader and ShadowMountPlus 1.7 Beta 5 or newer.
 - [PS5 Game Updater](https://theghostonline.dev/theghostonline/PS5-Game-Updater) — `game-updater.elf`; experimental game update engine with web UI on port 7920 and optional community backports. **Forgejo-hosted, not automatically tracked by the GitHub-only updater. SHA-256 calculated from a user-provided ELF; not independently matched to publisher metadata.**
+- [ps5-smbd](https://github.com/Marice/ps5-smbd) — `ps5-smbd.elf`; SMB2/3 server sharing PS5 `/data` and `/mnt` read/write over the LAN. **Security warning:** documented fixed login `ps5`/`ps5`; anyone with network access and these credentials can alter or delete files. Use only on a trusted, isolated network; never expose port 445 to the internet.
 
 **Payload Manager catalog entries are not safety endorsements.** Some ELFs install or support separate home-screen applications, some are experimental, and others are only appropriate as jailbreak bootstrap components. Read upstream instructions and verify console/firmware compatibility.
 
