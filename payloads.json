@@ -408,6 +408,20 @@
       "author": "Marice",
       "source": "https://github.com/Marice/ps5-smbd",
       "details_url": "https://github.com/Marice/ps5-smbd/releases/tag/v0.2.0"
+    },
+    {
+      "id": "kraken-mount",
+      "name": "Kraken Mount",
+      "filename": "kraken-mount.elf",
+      "url": "https://github.com/quer3q/kraken-mount/releases/download/v0.0.1-beta/kraken-mount.elf",
+      "description": "Experimental PS5 ELF game mounter for plaintext debug FPKG .pkg files and game folders (plain, zstd or LZ4) on internal/USB/extended storage. Requires a jailbroken PS5 and a running ELF loader (typically port 9021). Bundles ampr-emu-ng, registers home-screen tiles and serves a local web UI on port 8097. Beta software: back up data and use only with legally obtained game files.",
+      "version": "v0.0.1-beta",
+      "last_update": "2026-11-13",
+      "category": "Utilities & Tools",
+      "checksum": "32cdf8e9aee9a8e91a7acd8884ac4701a75a38d96d483ea00bb7cbf4fe11a522",
+      "author": "quer3q",
+      "source": "https://github.com/quer3q/kraken-mount",
+      "details_url": "https://github.com/quer3q/kraken-mount/releases/tag/v0.0.1-beta"
     }
   ]
 }
