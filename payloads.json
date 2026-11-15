@@ -422,6 +422,20 @@
       "author": "quer3q",
       "source": "https://github.com/quer3q/kraken-mount",
       "details_url": "https://github.com/quer3q/kraken-mount/releases/tag/v0.0.1-beta"
+    },
+    {
+      "id": "shadowkraken",
+      "name": "ShadowKraken",
+      "filename": "ShadowKraken.elf",
+      "url": "https://github.com/MNeroba/ShadowKraken/releases/download/1.00-Dev.1/ShadowKraken.elf",
+      "description": "Experimental development PS5 game library and mounting payload for game folders, disk images, and plaintext debug FPKGs; native FPKG mount/launch has NOT been verified on PS5. Requires compatible jailbroken PS5 with kstuff-lite v1.07+ and ELF loader. Web UI/API on port 10101 has NO AUTHENTICATION: use only on trusted LAN; do not expose to internet. Back up files and saves before testing.",
+      "version": "1.00-Dev.1",
+      "last_update": "2026-11-15",
+      "category": "Utilities & Tools",
+      "checksum": "21fdf8124112f86d46afba98380cc0dd2d8642f1265c26eb521db760c36b41da",
+      "author": "MNeroba",
+      "source": "https://github.com/MNeroba/ShadowKraken",
+      "details_url": "https://github.com/MNeroba/ShadowKraken/releases/tag/1.00-Dev.1"
     }
   ]
 }
