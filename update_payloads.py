@@ -45,9 +45,10 @@ SOURCES = {
     "recompstore-installer": ("elripalda/RecompStore", r"RecompStore-Installer\.elf"),
     "ps5-smbd": ("Marice/ps5-smbd", r"ps5-smbd\.elf"),
     "kraken-mount": ("quer3q/kraken-mount", r"kraken-mount\.elf"),
+    "shadowkraken": ("MNeroba/ShadowKraken", r"ShadowKraken\.elf"),
 }
 PS_CLOUD_REPOSITORY = "bc160201983/ps5-cloud-save"
-PRERELEASE_SOURCES = {"ps5-nzb-downloader"}
+PRERELEASE_SOURCES = {"ps5-nzb-downloader", "shadowkraken"}
 MAX_BINARY_SIZE = 512 * 1024 * 1024
 
 
