@@ -46,6 +46,7 @@ SOURCES = {
     "ps5-smbd": ("Marice/ps5-smbd", r"ps5-smbd\.elf"),
     "kraken-mount": ("quer3q/kraken-mount", r"kraken-mount\.elf"),
     "shadowkraken": ("MNeroba/ShadowKraken", r"ShadowKraken\.elf"),
+    "ps5-cleanup": ("xXBneutzerNameXx/PS5-Cleanup", r"ps5cleanup_v[\da-z._-]+\.elf"),
 }
 PS_CLOUD_REPOSITORY = "bc160201983/ps5-cloud-save"
 PRERELEASE_SOURCES = {"ps5-nzb-downloader", "shadowkraken"}
