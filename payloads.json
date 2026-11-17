@@ -436,6 +436,20 @@
       "author": "MNeroba",
       "source": "https://github.com/MNeroba/ShadowKraken",
       "details_url": "https://github.com/MNeroba/ShadowKraken/releases/tag/1.00-Dev.1"
+    },
+    {
+      "id": "ps5-cleanup",
+      "name": "PS5 Cleanup",
+      "filename": "ps5cleanup_v1.0.10.elf",
+      "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/download/v1.0.10/ps5cleanup_v1.0.10.elf",
+      "description": "PS5 cleanup utility for jailbroken consoles to review and selectively delete games, apps, saves, trophies, captures and leftovers, or perform a full cleanup. Starts in non-deleting test mode; actual deletion requires disabling test mode and explicit confirmation. WARNING: deletion is irreversible; back up important data and protect jailbreak entry points. Upstream warns against using PS5 Safe Mode Rebuild Database, which can remove installed PS4 fake-PKG games. Tested by developer on PS5 Pro firmware 12.00; other models/firmwares not confirmed.",
+      "version": "v1.0.10",
+      "last_update": "2026-11-14",
+      "category": "Utilities & Tools",
+      "checksum": "992332419af558a82d7ba0fb7feb6dbe73043ed0b162c55c84b47b5bdc3b017a",
+      "author": "xXBneutzerNameXx",
+      "source": "https://github.com/xXBneutzerNameXx/PS5-Cleanup",
+      "details_url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.10"
     }
   ]
 }
