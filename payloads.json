@@ -478,6 +478,20 @@
       "url": "https://github.com/Zubastic/PS5-Trophy-Info/releases/download/v1.0.0/trophy-info-auto.elf",
       "checksum": "b785980745bb04d04e10ec1a2314f9589a264a0186b228116793eab4e6f7394f",
       "description": "Experimental headless resident PS5 Trophy Info fake-profile engine for autoload lists; loads configuration from /data/TrophyInfo/config.json and exposes logs on port 5919. WARNING: Modifies live system UI process memory and may cause instability; back up trophy data and use cautiously."
+    },
+    {
+      "id": "titan-core",
+      "name": "TITAN CORE",
+      "filename": "TITAN-CORE-v1.0.elf",
+      "url": "https://github.com/devchmod/TITAN-CORE/releases/download/v1.0.0/TITAN-CORE-v1.0.elf",
+      "description": "PS5 game workspace for supported plaintext debug FPKGs, native mounting, internal/USB/extended-drive installation, live diagnostics and multilingual web UI on port 8097. Requires a jailbroken PS5 and ELF loader. Bundles kstuff-lite 1.11 and ShadowMountPlus 1.7beta10: disable separate autoload of those services to avoid conflicts. WARNING: v1.0 has not had a new PS5 hardware compatibility playtest; retail/encrypted PKGs are unsupported, and installer operations require free storage and backups. In-app update/restart functionality is not yet hardware verified.",
+      "version": "v1.0.0",
+      "last_update": "2026-11-16",
+      "category": "Utilities & Tools",
+      "checksum": "50f074700fc4f427ae87fb2cb986ad07d633ef01799077953817a6ffded7f91d",
+      "author": "devchmod",
+      "source": "https://github.com/devchmod/TITAN-CORE",
+      "details_url": "https://github.com/devchmod/TITAN-CORE/releases/tag/v1.0.0"
     }
   ]
 }
