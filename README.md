@@ -10,7 +10,7 @@ Open **Payload Manager → Settings → Manage Sources → Add Source** and past
 https://raw.githubusercontent.com/tanushshukla/my-ps5-payloads/main/payloads.json
 ```
 
-## Included payloads (34 ELF entries)
+## Included payloads (35 ELF entries)
 
 All download links in [payloads.json](payloads.json) point directly to official third-party GitHub releases, with SHA-256 checksums. No ELF binaries are mirrored here.
 
@@ -53,6 +53,7 @@ All download links in [payloads.json](payloads.json) point directly to official 
 - [PS5 Cleanup](https://github.com/xXBneutzerNameXx/PS5-Cleanup) — `ps5cleanup_v1.0.10.elf`; cleanup utility for jailbroken PS5 consoles. **Destructive operation warning:** starts in non-deleting test mode, but disabling test mode and confirming can permanently delete games, apps, saves and other data. Back up important files, verify selections, and protect jailbreak entry points. Developer-tested on PS5 Pro firmware 12.00; other configurations not verified. Upstream warns against Safe Mode **Rebuild Database** because it can remove installed PS4 fake-PKG games.
 - [PS5 Trophy Info](https://github.com/Zubastic/PS5-Trophy-Info) — `trophy-info.elf`; experimental trophy browser/editor with backup and restore, web UI on port 5911, and optional fake profile engine. **Back up trophy data; trophy edits and live system-process patches can cause corruption or instability.**
 - [PS5 Trophy Info Auto](https://github.com/Zubastic/PS5-Trophy-Info) — `trophy-info-auto.elf`; experimental headless autoload engine for fake trophy profiles; logs on port 5919. **Patches live system UI memory; use cautiously.**
+- [TITAN CORE](https://github.com/devchmod/TITAN-CORE) — `TITAN-CORE-v1.0.elf`; PS5 debug-FPKG mounting, USB/extended-drive installer, diagnostics and web UI on port 8097. **Bundles kstuff-lite 1.11 and ShadowMountPlus 1.7beta10: disable separate autoload entries for those services before launching.** Requires jailbreak/ELF loader; v1.0 has not had a new PS5 hardware compatibility playtest, and in-app update/restart is not yet hardware verified. Back up important data; retail/encrypted PKGs are unsupported.
 
 **Payload Manager catalog entries are not safety endorsements.** Some ELFs install or support separate home-screen applications, some are experimental, and others are only appropriate as jailbreak bootstrap components. Read upstream instructions and verify console/firmware compatibility.
 
