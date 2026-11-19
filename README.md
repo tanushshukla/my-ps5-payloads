@@ -10,7 +10,7 @@ Open **Payload Manager → Settings → Manage Sources → Add Source** and past
 https://raw.githubusercontent.com/tanushshukla/my-ps5-payloads/main/payloads.json
 ```
 
-## Included payloads (32 ELF entries)
+## Included payloads (34 ELF entries)
 
 All download links in [payloads.json](payloads.json) point directly to official third-party GitHub releases, with SHA-256 checksums. No ELF binaries are mirrored here.
 
@@ -51,6 +51,8 @@ All download links in [payloads.json](payloads.json) point directly to official 
 - [Kraken Mount](https://github.com/quer3q/kraken-mount) — `kraken-mount.elf`; **experimental beta** PS5 game mounter for plaintext debug FPKGs and plain/zstd/LZ4 game folders. Requires an ELF loader; bundles ampr-emu-ng, registers home-screen tiles, and offers a web UI on port 8097. Back up data before testing.
 - [ShadowKraken](https://github.com/MNeroba/ShadowKraken) — `ShadowKraken.elf`; **experimental development prerelease** with library management, disk-image mounting and native debug FPKG support. Requires kstuff-lite v1.07+ and an ELF loader. **Native FPKG mounting/launch is not yet verified on a PS5.** Web API on port 10101 has **no authentication**: trusted LAN only. Back up files and saves before testing.
 - [PS5 Cleanup](https://github.com/xXBneutzerNameXx/PS5-Cleanup) — `ps5cleanup_v1.0.10.elf`; cleanup utility for jailbroken PS5 consoles. **Destructive operation warning:** starts in non-deleting test mode, but disabling test mode and confirming can permanently delete games, apps, saves and other data. Back up important files, verify selections, and protect jailbreak entry points. Developer-tested on PS5 Pro firmware 12.00; other configurations not verified. Upstream warns against Safe Mode **Rebuild Database** because it can remove installed PS4 fake-PKG games.
+- [PS5 Trophy Info](https://github.com/Zubastic/PS5-Trophy-Info) — `trophy-info.elf`; experimental trophy browser/editor with backup and restore, web UI on port 5911, and optional fake profile engine. **Back up trophy data; trophy edits and live system-process patches can cause corruption or instability.**
+- [PS5 Trophy Info Auto](https://github.com/Zubastic/PS5-Trophy-Info) — `trophy-info-auto.elf`; experimental headless autoload engine for fake trophy profiles; logs on port 5919. **Patches live system UI memory; use cautiously.**
 
 **Payload Manager catalog entries are not safety endorsements.** Some ELFs install or support separate home-screen applications, some are experimental, and others are only appropriate as jailbreak bootstrap components. Read upstream instructions and verify console/firmware compatibility.
 
