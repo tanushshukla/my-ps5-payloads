@@ -49,6 +49,7 @@ SOURCES = {
     "ps5-cleanup": ("xXBneutzerNameXx/PS5-Cleanup", r"ps5cleanup_v[\da-z._-]+\.elf"),
     "ps5-trophy-info": ("Zubastic/PS5-Trophy-Info", r"trophy-info\.elf"),
     "ps5-trophy-info-auto": ("Zubastic/PS5-Trophy-Info", r"trophy-info-auto\.elf"),
+    "titan-core": ("devchmod/TITAN-CORE", r"TITAN-CORE-v[\da-z._-]+\.elf"),
 }
 PS_CLOUD_REPOSITORY = "bc160201983/ps5-cloud-save"
 PRERELEASE_SOURCES = {"ps5-nzb-downloader", "shadowkraken"}
