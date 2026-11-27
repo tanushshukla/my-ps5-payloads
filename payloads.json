@@ -492,6 +492,20 @@
       "author": "devchmod",
       "source": "https://github.com/devchmod/TITAN-CORE",
       "details_url": "https://github.com/devchmod/TITAN-CORE/releases/tag/v1.0.0"
+    },
+    {
+      "id": "disk-space-analyzer",
+      "name": "Disk Space Analyzer for PS5",
+      "filename": "disk-space-analyzer.elf",
+      "url": "https://github.com/igorwojda/ps5-disk-space-alalizer/releases/download/v1.0.0-beta1/disk-space-analyzer.elf",
+      "description": "Beta storage analyzer for jailbroken PS5: scans internal, M.2 and USB drives, displays folder and game sizes and largest files, and previews space reclaimed by selective cleanup. Requires ELF loader; Media tile and local browser UI on port 8833. WARNING: cleanup can permanently delete selected data; back up important files and review selections before confirming. Use on a trusted local network.",
+      "version": "v1.0.0-beta1",
+      "last_update": "2026-11-27",
+      "category": "Utilities & Tools",
+      "checksum": "16193b6b92b7475345a165e8d0d088b07d141f267e0266e744fbd05b24daa8c6",
+      "author": "igorwojda",
+      "source": "https://github.com/igorwojda/ps5-disk-space-alalizer",
+      "details_url": "https://github.com/igorwojda/ps5-disk-space-alalizer/releases/tag/v1.0.0-beta1"
     }
   ]
 }
