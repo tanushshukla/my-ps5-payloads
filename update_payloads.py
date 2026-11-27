@@ -50,6 +50,7 @@ SOURCES = {
     "ps5-trophy-info": ("Zubastic/PS5-Trophy-Info", r"trophy-info\.elf"),
     "ps5-trophy-info-auto": ("Zubastic/PS5-Trophy-Info", r"trophy-info-auto\.elf"),
     "titan-core": ("devchmod/TITAN-CORE", r"TITAN-CORE-v[\da-z._-]+\.elf"),
+    "disk-space-analyzer": ("igorwojda/ps5-disk-space-alalizer", r"disk-space-analyzer\.elf"),
 }
 PS_CLOUD_REPOSITORY = "bc160201983/ps5-cloud-save"
 PRERELEASE_SOURCES = {"ps5-nzb-downloader", "shadowkraken"}
