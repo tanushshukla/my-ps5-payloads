@@ -10,7 +10,7 @@ Open **Payload Manager → Settings → Manage Sources → Add Source** and past
 https://raw.githubusercontent.com/tanushshukla/my-ps5-payloads/main/payloads.json
 ```
 
-## Included payloads (35 ELF entries)
+## Included payloads (36 ELF entries)
 
 All download links in [payloads.json](payloads.json) point directly to official third-party GitHub releases, with SHA-256 checksums. No ELF binaries are mirrored here.
 
@@ -54,6 +54,7 @@ All download links in [payloads.json](payloads.json) point directly to official 
 - [PS5 Trophy Info](https://github.com/Zubastic/PS5-Trophy-Info) — `trophy-info.elf`; experimental trophy browser/editor with backup and restore, web UI on port 5911, and optional fake profile engine. **Back up trophy data; trophy edits and live system-process patches can cause corruption or instability.**
 - [PS5 Trophy Info Auto](https://github.com/Zubastic/PS5-Trophy-Info) — `trophy-info-auto.elf`; experimental headless autoload engine for fake trophy profiles; logs on port 5919. **Patches live system UI memory; use cautiously.**
 - [TITAN CORE](https://github.com/devchmod/TITAN-CORE) — `TITAN-CORE-v1.0.elf`; PS5 debug-FPKG mounting, USB/extended-drive installer, diagnostics and web UI on port 8097. **Bundles kstuff-lite 1.11 and ShadowMountPlus 1.7beta10: disable separate autoload entries for those services before launching.** Requires jailbreak/ELF loader; v1.0 has not had a new PS5 hardware compatibility playtest, and in-app update/restart is not yet hardware verified. Back up important data; retail/encrypted PKGs are unsupported.
+- [Disk Space Analyzer for PS5](https://github.com/igorwojda/ps5-disk-space-alalizer) — `disk-space-analyzer.elf`; beta utility to scan internal, M.2 and USB storage, inspect game/folder sizes and preview selective cleanup. Requires an ELF loader; Media tile and local web UI on port 8833. **Back up important data and review selections: cleanup can permanently delete files.**
 
 **Payload Manager catalog entries are not safety endorsements.** Some ELFs install or support separate home-screen applications, some are experimental, and others are only appropriate as jailbreak bootstrap components. Read upstream instructions and verify console/firmware compatibility.
 
