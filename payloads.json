@@ -452,8 +452,8 @@
       "details_url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.10"
     },
     {
-      "version": "v1.0.1",
-      "last_update": "2026-11-22",
+      "version": "v1.0.2",
+      "last_update": "2026-11-27",
       "category": "Utilities & Tools",
       "author": "Zubastic",
       "source": "https://github.com/Zubastic/PS5-Trophy-Info",
@@ -461,13 +461,13 @@
       "id": "ps5-trophy-info",
       "name": "PS5 Trophy Info",
       "filename": "trophy-info.elf",
-      "url": "https://github.com/Zubastic/PS5-Trophy-Info/releases/download/v1.0.1/trophy-info.elf",
-      "checksum": "22f53baa627c6e43bb52e430e1473b58e01d1ee08e56a4becef33f17ae942576",
+      "url": "https://github.com/Zubastic/PS5-Trophy-Info/releases/download/v1.0.2/trophy-info.elf",
+      "checksum": "0a7b0c23ccb65347eecae408c5c08bc7be5649600b3662e3fa6c171eea79b334",
       "description": "Experimental PS5 trophy viewer/editor and backup/restore tool with web UI on port 5911; supports trophy dates, local trophy data and fake displayed profile fields. WARNING: Trophy edits can damage trophy records; back up data. Its fake-profile engine patches live system UI processes, risking instability. Writes are normally blocked while a game runs but a force override exists."
     },
     {
-      "version": "v1.0.1",
-      "last_update": "2026-11-22",
+      "version": "v1.0.2",
+      "last_update": "2026-11-27",
       "category": "Utilities & Tools",
       "author": "Zubastic",
       "source": "https://github.com/Zubastic/PS5-Trophy-Info",
@@ -475,8 +475,8 @@
       "id": "ps5-trophy-info-auto",
       "name": "PS5 Trophy Info Auto",
       "filename": "trophy-info-auto.elf",
-      "url": "https://github.com/Zubastic/PS5-Trophy-Info/releases/download/v1.0.1/trophy-info-auto.elf",
-      "checksum": "06ca697d444be58f429f81137caeb8adf87f47d60847269991e868379d3e98d5",
+      "url": "https://github.com/Zubastic/PS5-Trophy-Info/releases/download/v1.0.2/trophy-info-auto.elf",
+      "checksum": "5c9db39593cca32403b44b61ca4212821081b342dfc733cb1e68a15253534966",
       "description": "Experimental headless resident PS5 Trophy Info fake-profile engine for autoload lists; loads configuration from /data/TrophyInfo/config.json and exposes logs on port 5919. WARNING: Modifies live system UI process memory and may cause instability; back up trophy data and use cautiously."
     },
     {
